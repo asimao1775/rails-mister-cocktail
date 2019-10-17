@@ -14,9 +14,9 @@ class DosesController < ApplicationController
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to cocktails_path
+      redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      render 'cocktails/show'
     end
   end
 
@@ -25,6 +25,7 @@ class DosesController < ApplicationController
 
   def destroy
     @dose = Dose.destroy
+    redirect_to root_path
   end
 
   private

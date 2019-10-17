@@ -10,6 +10,6 @@
   <% end %>
 
   <%= f.input :description %>
-  <%= f.association :ingredient %>
+  <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
   <%= f.submit "send", class: "btn btn-primary" %>
 <% end %>
